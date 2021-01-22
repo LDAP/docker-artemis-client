@@ -28,4 +28,4 @@ You can overwrite the default with `-p hostPort:80`.
 
 |Argument                  |Description                                    |
 |--------------------------|-----------------------------------------------|
-|ARTEMIS_VERSION           |Git tag or branch name                         |
+|ARTEMIS_VERSION           |Git tag or branch name, default: develop       |
