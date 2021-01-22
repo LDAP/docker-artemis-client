@@ -21,6 +21,17 @@ server {
     location /auth {
        proxy_pass $API_REDIRECT_URL/auth;
     }
+    location /time {
+       proxy_pass $API_REDIRECT_URL/time;
+    }
+    location /websocket {
+       proxy_pass $API_REDIRECT_URL/websocket;
+       proxy_http_version 1.1;
+       proxy_set_header Upgrade $http_upgrade;
+       proxy_set_header Connection "upgrade";
+       proxy_set_header Host $http_host;
+       proxy_pass_header X-XSRF-TOKEN;
+    }
  
     location / {
         try_files $uri $uri/ /index.html;
