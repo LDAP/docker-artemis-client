@@ -1,5 +1,7 @@
 # Artemis Client Docker
 
+Enabling CORS may be necessary on server side. See the documentation [here](https://www.jhipster.tech/separating-front-end-and-api/).
+
 ## Environment variables
 
 |Variable                  |Description                                                           |
@@ -9,10 +11,12 @@
 
 ## Mount points
 
-|Mount                     |Description                                    |
-|--------------------------|-----------------------------------------------|
-|`/etc/nginx/conf.d/`      |generated configs, use to overwrite configs    |
-|`/var/log/nginx`          |log directory                                  |
+|Mount                                               |Description                                    |
+|----------------------------------------------------|-----------------------------------------------|
+|`/etc/nginx/conf.d/`                                |generated configs, use to overwrite configs    |
+|`/var/log/nginx`                                    |log directory                                  |
+|`/usr/share/nginx/html/public/images/logo.png`      |set own logo. _recommended_                    |
+|`/usr/share/nginx/html/public/images/favicon.ico`   |set own favicon. _recommended_                 |
 
 ## Ports
 This container exposes port 80. Run the container with `-P` to publish all exposed ports to the host interfaces.
