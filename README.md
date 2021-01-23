@@ -13,7 +13,7 @@ Enabling CORS may be necessary on server side. See the documentation [here](http
 
 |Mount                                                           |Description                                    |
 |----------------------------------------------------------------|-----------------------------------------------|
-|`/etc/nginx/conf.d/`                                            |generated configs, use to overwrite configs    |
+|`/etc/nginx/conf.d/`                                            |generated configs, used to overwrite configs   |
 |`/var/log/nginx`                                                |log directory                                  |
 |`/usr/share/nginx/html/public/images/logo.png`                  |set own logo. _recommended_                    |
 |`/usr/share/nginx/html/favicon.ico`                             |set own favicon. _recommended_                 |
