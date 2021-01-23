@@ -31,7 +31,7 @@ RUN echo "Building frontend from $ARTEMIS_GIT_REPOSITORY" \
   && cd Artemis \
   && yarn install \
   && yarn run webpack:prod \
-  && rm build/resources/main/static/stats.json
+  && rm build/resources/main/static/stats.json build/resources/main/static/report.html
 
 ####################
 # Execution stage  #
