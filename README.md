@@ -1,5 +1,7 @@
 # Artemis Client Docker
 
+For usage refer to [LDAP/docker-compose-artemis](https://github.com/LDAP/docker-compose-artemis).
+
 Enabling CORS may be necessary on server side. See the documentation [here](https://www.jhipster.tech/separating-front-end-and-api/).
 
 ## Environment variables
