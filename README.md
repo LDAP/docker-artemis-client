@@ -26,7 +26,7 @@ Enabling CORS may be necessary on server side. See the documentation [here](http
 This container exposes port 80. Run the container with `-P` to publish all exposed ports to the host interfaces.
 You can overwrite the default with `-p hostPort:80`.
 
-## Development
+## Building
 
 ### Build arguments
 
