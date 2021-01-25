@@ -20,7 +20,6 @@ Enabling CORS may be necessary on server side. See the documentation [here](http
 |`/usr/share/nginx/html/public/images/logo.png`                  |set own logo. _recommended_                    |
 |`/usr/share/nginx/html/public/images/favicon.ico`               |set own favicon. _recommended_                 |
 |`/usr/share/nginx/html/public/content/privacy_statement.html`   |set own privacy statement. _recommended_       |
-|`/var/log/nginx/`                                               |nginx logs directory                           |
 
 ## Ports
 This container exposes port 80. Run the container with `-P` to publish all exposed ports to the host interfaces.
