@@ -29,6 +29,7 @@ You can overwrite the default with `-p hostPort:80`.
 
 ### Build arguments
 
-|Argument                  |Description                                    |
-|--------------------------|-----------------------------------------------|
-|ARTEMIS_VERSION           |Git tag or branch name, default: develop       |
+|Argument                  |Description                                             |
+|--------------------------|--------------------------------------------------------|
+|ARTEMIS_VERSION           |Git tag or branch name, default: develop                |
+|ARTEMIS_GIT_REPOSITORY    |Git repo to pull Artemis from. default: ls1intum/Artemis|
