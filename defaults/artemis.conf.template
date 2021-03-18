@@ -9,24 +9,33 @@ server {
 
     # Proxy API requests
     location /api {
+        include /etc/nginx/proxy.conf;
         proxy_pass $API_REDIRECT_URL/api;
     }
     location /management {
+        include /etc/nginx/proxy.conf;
         proxy_pass $API_REDIRECT_URL/management;
     }       
     location /v2 {
-       proxy_pass $API_REDIRECT_URL/v2;
+        include /etc/nginx/proxy.conf;
+        proxy_pass $API_REDIRECT_URL/v2;
     }
     location /time {
-       proxy_pass $API_REDIRECT_URL/time;
+        include /etc/nginx/proxy.conf;
+        proxy_pass $API_REDIRECT_URL/time;
     }
     location /websocket {
-       proxy_pass $API_REDIRECT_URL/websocket;
-       proxy_http_version 1.1;
-       proxy_set_header Upgrade $http_upgrade;
-       proxy_set_header Connection "upgrade";
-       proxy_set_header Host $http_host;
-       proxy_pass_header X-XSRF-TOKEN;
+        include /etc/nginx/proxy.conf;
+        proxy_pass $API_REDIRECT_URL/websocket;
+        proxy_pass_header X-XSRF-TOKEN;
+    }
+    location /saml2 {
+       include /etc/nginx/proxy.conf;
+       proxy_pass $API_REDIRECT_URL/saml2;
+    }
+    location /login {
+       include /etc/nginx/proxy.conf;
+       proxy_pass $API_REDIRECT_URL/login;
     }
 
     # Caching

@@ -41,6 +41,7 @@ FROM nginx
 LABEL maintainer "Lucas Alber <lucasd.alber@gmail.com>"
 
 COPY defaults/nginx.conf /etc/nginx/nginx.conf
+COPY defaults/proxy.conf /etc/nginx/proxy.conf
 # See https://hub.docker.com/_/nginx Environment variables
 COPY defaults/artemis.conf.template /etc/nginx/templates/artemis.conf.template
 COPY --from=build /build/Artemis/build/resources/main/static /usr/share/nginx/html
