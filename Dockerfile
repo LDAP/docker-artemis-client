@@ -15,6 +15,7 @@ RUN echo "Installing prerequisites" \
   && apt-get update && apt-get install -y --no-install-recommends \
   git \
   nodejs \
+  rsync \
   && npm install --global yarn
 
 ARG ARTEMIS_VERSION
@@ -26,7 +27,8 @@ RUN echo "Building frontend from $ARTEMIS_GIT_REPOSITORY" \
   && cd Artemis \
   && yarn install \
   && yarn run webpack:prod \
-  && rm build/resources/main/static/stats.json build/resources/main/static/report.html
+  && rm build/resources/main/static/stats.json build/resources/main/static/report.html \
+  && rsync -a src/main/resources/public/ build/resources/main/static/public/
 
 ####################
 # Execution stage  #
