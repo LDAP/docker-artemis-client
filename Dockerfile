@@ -13,11 +13,6 @@ RUN echo "Installing prerequisites" \
   && apt-get update && apt-get install -y --no-install-recommends curl \
   && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
   && apt-get update && apt-get install -y --no-install-recommends \
-  cron \
-  supervisor \
-  syslog-ng \
-  syslog-ng-core \
-  syslog-ng-mod-redis \
   git \
   nodejs \
   && npm install --global yarn
