@@ -15,8 +15,7 @@ RUN echo "Installing prerequisites" \
   && apt-get update && apt-get install -y --no-install-recommends \
   git \
   nodejs \
-  rsync \
-  && npm install --global yarn
+  rsync
 
 ARG ARTEMIS_VERSION
 ARG ARTEMIS_GIT_REPOSITORY
@@ -25,8 +24,8 @@ RUN echo "Building frontend from $ARTEMIS_GIT_REPOSITORY" \
   && mkdir /build && cd /build \
   && git clone --depth 1 --branch $ARTEMIS_VERSION $ARTEMIS_GIT_REPOSITORY \
   && cd Artemis \
-  && yarn install \
-  && yarn run webpack:prod \
+  && npm install \
+  && APP_VERSION=$(./gradlew properties -q | grep "^version:" | awk '{print $2}') NODE_OPTIONS="--max_old_space_size=6144" npm run webapp:prod \
   && rm build/resources/main/static/stats.json build/resources/main/static/report.html \
   && rsync -a src/main/resources/public/ build/resources/main/static/public/
 
